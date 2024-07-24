@@ -141,3 +141,26 @@ Prove that 3 is purple
 1. $0$ is purple.  `(premise)`
 2. If an integer $n$ is purple, then $n+1$ is also purple. `(premise)`
 3. If $0$ is purple, then $1$ is purple `(universal instantiation, from 2)`
+4. $1$ is purple. `(modus ponens, from 3 and 1)`
+5. If $1$ is purple, then $2$ is purple. `(universal instantiation, from 2)`
+6. $2$ is purple. `(modus ponens, from 5 and 4)`
+7. If $2$ is purple, then $3$ is purple. `(universal instantiation from 2)`
+8. $3$ is purple. `(modus ponens, from 7 and 6)`
+> If we now consider the question: `how far can we keep doing this?`
+
+> You would think infinitely because from the information we are given, it is reasonable to assume that every next integer will be purple forever.
+
+> To `generalize to the statement` that every next number is purple we `need something more`
+
+> We `cannot prove` that all integers are purple
+
+## Axiom Schema of Induction
+Let $P$ be a property. If these two statements hold:
+
+* $P$ holds of $0$.
+* For all $n \in \mathbb{N}$, if $P$ holds of $n$, then it holds of $n+1$
+
+Then $P$ holds for all $n \in \mathbb{N}$.
+
+> In english this basically translates to __`if we can get to any particular point, we can get to any point`__
+
