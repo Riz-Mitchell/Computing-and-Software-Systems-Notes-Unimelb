@@ -99,3 +99,126 @@ A collection of symbols is a WFF `if and only if it can be made using the follow
 
 ## Truth Tables
 > [A handy tool for `generating simple Truth Tables` using `propositional logic formulas`](https://web.stanford.edu/class/cs103/tools/truth-table-tool/)
+
+### What is Truth?
+What does it mean for $P \wedge Q$ to be true?
+> Both $P$ and $Q$ are true for the propositional logic formula to be true
+
+What about just $P$?
+> $P$ is true for the propositional logic formula to be true
+
+Is $P \vee \neg P$ true?
+> We cannot tell whether or not the formula is 'true' because we do not have the inputs
+
+There is a difference between a `propositional logic formula that is true`, and one that is `always true`
+
+## Boolean Semantics
+
+### Connectives
+A __`Truth Function`__ is a function that `takes truth values and outputs truth values`
+
+Boolean truth values are usually `True` and `False` or `1` and `0`
+
+The `connectives` I introduced in the [Syntax Section](#syntax) are `truth functional`
+
+Truth Functions can be represented as `truth tables` similar to below:
+
+| $A$| $B$ |  | $\neg A$ | $A \wedge B$ | $A \vee B$ | $A \rightarrow B$ | $A \leftrightarrow B$ |
+| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+|     |     |  |     |     |     |     |     |
+| 0 | 0 |  | 1 | 0 | 0 | 1 | 1 |
+| 0 | 1 |  | 1 | 0 | 1 | 1 | 0 |
+| 1 | 0 |  | 0 | 0 | 1 | 0 | 0 |
+| 1 | 1 |  | 0 | 1 | 1 | 1 | 1 |
+
+> __For $A \rightarrow B$, the propositional logic formula outputs False `exactly when` $A$ `is True and` $B$ `is False`__ 
+
+> __For $A \leftrightarrow B$, the formula outputs True `when` $A$ `and` $B$ `have the same truth value`__
+
+### Letters
+[Propositional letters (introduced in the Syntax section)](#syntax) are `Boolean variables`
+
+A __`Truth Assignment`__ is a function that transforms a propositional letter into a truth value
+
+Useful notation:
+
+$V = \{P \mapsto 1, Q \mapsto 0\}$
+
+We then have: 
+
+$V(P) = 1$
+
+$V(Q) = V(R) = ... = V(Z) = 0$
+
+### Truth of a Formula
+Let $V = \{P \mapsto 1, Q \mapsto 0\}$
+
+Which of these formulas are true under $V$?
+
+1. $P \wedge Q$ `Not True`
+2. $(P \vee Q) \wedge (P \vee R)$ `True`
+3. $P \rightarrow Q$ `Not True`
+4. $\neg P \rightarrow \neg Q$ `True`
+
+Using a `shorthand` "$V \models \phi$" which means "$\phi$ is true under $V$"
+> Or $V$ is a `model` of $\phi$
+
+### Logical Equivalence
+Formulas are __`Logically Equivalent`__ if they have equal truth values __`under every truth assignment`__
+
+Using a `shorthand` "$F \equiv G$" means "$F$ is logically equivalent to $G$
+
+### Material Conditional
+$\rightarrow$ is weird!
+
+It is often read as "implies", but causality is not required!
+
+## Modus Ponens
+$P \rightarrow Q$ `Premise`
+
+$P$ `Premise`
+
+$Q$ `Conclusion`
+
+> Essentially this statement translates to, `"if P implies Q and P holds, Q holds`.
+
+A rule is `sound` if every model of the premises is a model of the conclusion.
+> That is to say if the premises [semantically](https://dictionary.cambridge.org/dictionary/english/semantically) entail the conclusion
+
+__Challenge:__ Prove that modus ponens is sound.
+> Using the premises derive the conclusion
+
+## Exit Puzzle
+On the island of Knights and Knaves, everyone is a knight or a knave.
+Knights always tell the truth. Knaves always lie.
+
+Today there is a census on the island!
+
+You are a census taker, going from house to house. Fill in what you know about each of these three houses:
+
+* __In house 1__: We are both knaves.
+> The `statement cannot be true` as no one on this island can admit to being a knave hence the speaker must be a knave
+
+> So their statement must be false and the `other house member must be a knight`
+
+* __In house 2__: At least one of us is a knave.
+> `Cannot be a knave speaking` as it would `make this statement true`, hence the `speaker is a knight`
+
+> As the speaker is a knight and they are telling the truth, `the other person is a knave`
+
+* __In house 3__: If I am a knight then so is my wife.
+
+### Eric Zheng's Take on House 3
+
+"I'm not the lecturer, but here is my take:
+
+For the sake of contradiction, let's `assume the person is a knave`. 
+
+As this person is a knave, we know the `statement they said` - "If I am a knight then so is my wife" - `is false`. 
+Since this statement is false, we know that it must be the case that "I" am a knight and "my" wife is not a knight. (This part is the key, as in no other circumstances is this statement false. Because in cases where "I" am a knave, then this `statement is true regardless of what my wife is`, meaning that "I" am a knave that is `telling a truth which is impossible`) 
+
+However we arrive at a `contradiction that I am both a knight at a knave.`
+
+Thus "I" `cannot be a knave`
+
+Hope this helps!"
