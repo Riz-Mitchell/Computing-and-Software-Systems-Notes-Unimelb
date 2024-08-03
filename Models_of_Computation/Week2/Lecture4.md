@@ -115,8 +115,34 @@ To get CNF from NNF, distribute $\vee$ over $\wedge$.
 
 $(\neg P \wedge (\neg Q \rightarrow R)) \leftrightarrow S$
 
-$((\ P \wedge (\neg Q \rightarrow R)) \rightarrow S) \wedge (S \rightarrow (\neg P \wedge ( \neg Q \rightarrow R)))$
+$\equiv ((\ P \wedge (\neg Q \rightarrow R)) \rightarrow S) \wedge (S \rightarrow (\neg P \wedge ( \neg Q \rightarrow R)))$ `1`
 
-$(\neg (\neg P \wedge (\neg Q \rightarrow R)) \vee S) \wedge (\neg S \vee (\neg P \wedge (\neg Q \rightarrow R)))$
+$\equiv (\neg (\neg P \wedge (\neg Q \rightarrow R)) \vee S) \wedge (\neg S \vee (\neg P \wedge (\neg Q \rightarrow R)))$ `2`
 
-$NEED \space TO \space CONTINUE$
+$\equiv (\neg (\neg P \wedge (\neg \neg Q \vee R)) \vee S) \wedge (\neg S \vee (\neg P \wedge (\neg \neg Q \vee R)))$ `2`
+
+$\equiv ((\neg \neg P \vee (\neg \neg \neg Q \wedge \neg R)) \vee S) \wedge (\neg S \vee (\neg P \wedge (\neg \neg Q \vee R)))$ `3`
+
+$\equiv ((P \vee (\neg Q \wedge \neg R)) \vee S) \wedge (\neg S \vee( \neg P \wedge (Q \vee R)))$ `4`
+
+$\equiv (((P \vee \neg Q) \wedge (P \vee \neg R)) \vee S) \wedge ((\neg S \vee \neg P) \wedge (\neg S \vee (Q \vee R)))$ `5`
+
+$\equiv (P \vee \neg Q \vee S) \wedge (P \vee \neg R \vee S) \wedge (\neg S \vee \neg P) \wedge (\neg S \vee Q \vee R)$
+
+The result is in conjunctive normal form
+
+## Resolution is Refutation-Complete
+`Theorem:` Every unsatisfiable set of clauses has a resolution refutation.
+
+In other words:
+
+`Theorem:` Let $\Sigma$ be a set of clauses.
+
+If $\Sigma \models \bot$, then $\Sigma \vdash_R \bot$
+
+## Satisfiability Algorithm
+
+1. Convert formula into suitable form.
+2. Repeatedly apply resolution.
+  * Derive $\bot$? Report `unsatisfiable`
+  * Cannot derive anything new? Report `satisfiable`

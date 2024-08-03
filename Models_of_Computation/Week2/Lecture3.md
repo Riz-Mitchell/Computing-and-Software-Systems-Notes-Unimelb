@@ -55,6 +55,7 @@ OF the following formulas, which allow us to conclude $P \rightarrow Q$?
 
 ## Tautology
 A formula of propositional logic that is `always true`
+> Tautologies are `valid`
 
 $(\neg P \wedge Q) \rightarrow (P \rightarrow R)$ is an example of a `tautology`
 
@@ -115,7 +116,7 @@ It is true `if and only if` it is currently raining
 Classify the following formulas as valid, contingent, or unsatisfiable:
 
 1. $P$ `contingent`
-2. $P \leftrightarrow \not P$ `unsatisfiable`
+2. $P \leftrightarrow \neg P$ `unsatisfiable`
 3. $P \rightarrow (\neg Q \vee P)$ `valid`
 4. $\neg Q \vee \neg (P \wedge \neg Q)$ `valid`
 

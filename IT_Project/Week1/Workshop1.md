@@ -9,6 +9,7 @@
 * Nanda Bawana 1353471
 ## Questions for the chick who runs it
 * Who is the target audience?
+* 
 
 ## About the Project
 * Requirement gathering
