@@ -217,7 +217,7 @@ $P \leftrightarrow Q$ can be rewritten as $(P \rightarrow Q) \wedge (Q \rightarr
 
 So starting with $(P \rightarrow Q) \wedge (Q \rightarrow P)$
 
-We look at $(P \rightarrow Q)$ and from `implication equivalence` we know it can be written as the conjunction $\neg P \vee Q$. Also, the implication $(Q \rightarrow P)$ can be rewritten as $\neg Q \vee P$
+We look at $(P \rightarrow Q)$ and from `implication equivalence` we know it can be written as the disjunction $\neg P \vee Q$. Also, the implication $(Q \rightarrow P)$ can be rewritten as $\neg Q \vee P$
 
 Hence we are left with the following:
 
