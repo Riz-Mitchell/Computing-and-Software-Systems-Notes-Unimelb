@@ -125,11 +125,11 @@ Five new kinds of symbols:
 
 Tina found Rover and returned him to Anne:
 
-$Found(tina, rover) \wedge Gave(tina, rover, anne)$
+$\text{Found}(\text{tina}, \text{rover}) \wedge \text{Gave}(\text{tina}, \text{rover}, \text{anne})$
 
 Tina found a dog and gave `it` to Anne:
 
-$\exists \times (Dog(x) \wedge Found(tina, x) \wedge Gave(tina, x, anne))$
+$\exists x (\text{Dog}(x) \wedge \text{Found}(\text{tina}, x) \wedge \text{Gave}(\text{tina}, x, \text{anne}))$
 
 Lee inhabits the house `that` jackie built:
 

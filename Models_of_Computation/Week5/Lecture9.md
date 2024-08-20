@@ -144,3 +144,117 @@ $
 \forall x ((\neg P (x) \vee \exists y (R (x, y) \wedge \forall z R (z, y))) \wedge (\forall u (\neg R (x, u) \vee \exists v \neg R (v, u)) \vee P (x)))
 \end{equation}
 $
+
+## Clausal Form: Step 4 - Skolemize
+
+Let us highlight the existentially quantified variables:
+
+$
+\begin{equation}
+\forall x ((\neg P (x) \vee \exists y (R (x, y) \wedge \forall z R (z, y))) \wedge (\forall u (\neg R (x, u) \vee \exists v \neg R (v, u)) \vee P (x)))
+\end{equation}
+$
+
+The existentially quantified $y$ is the scope of $\forall x$ - so replace it by $f(x)$
+
+The existentially quantified $v$ is in the scope $\forall x$, as well as of $\forall u$. So we replace it by $G(u, x)$.
+
+$
+\begin{equation}
+\forall x ((\neg P(x) \vee (R (x, f(x)) \wedge \forall z R (z, f(x)))) \wedge (\forall u ( \neg R (x, u) \vee \neg R (g(u, x), u)) \vee P(x)))
+\end{equation}
+$
+
+## Clausal Form: Step 5 - Drop Universal
+
+Eliminating universal quantifiers is easy: 
+
+$
+\begin{equation}
+\forall x ((\neg P(x) \vee (R (x, f(x)) \wedge \forall z R (z, f(x)))) \wedge (\forall u ( \neg R (x, u) \vee \neg R (g(u, x), u)) \vee P(x)))
+\end{equation}
+$
+
+becomes
+
+$
+\begin{equation}
+(\neg P(x) \vee (R (x, f(x)) \wedge R (z, f(x)))) \wedge ( \neg R (x, u) \vee \neg R (g(u, x), u) \vee P(x))
+\end{equation}
+$
+
+## Clausal Form: Step 6 - Convert to CNF
+
+$
+\begin{equation}
+(\neg P(x) \vee (R (x, f(x)) \wedge R (z, f(x)))) \wedge ( \neg R (x, u) \vee \neg R (g(u, x), u) \vee P(x))
+\end{equation}
+$
+
+becomes, using distribution:
+
+$
+\begin{equation}
+\begin{split}
+(\neg P(x) \vee R(x, f(x))) \wedge \\
+(\neg P(x) \vee R(z, f(x))) \wedge \\
+(\neg R(x, u) \vee \neg R(g(u, x), u) \vee P(x))
+\end{split}
+\end{equation}
+$
+
+or, written as a set of sets of literals
+
+$
+\begin{equation}
+\begin{split}
+\{\neg P(x), R(x, f(x))\}, \\
+\{(\neg P(x), R(z, f(x)))\}, \\
+\{(\neg R(x, u), \neg R (g(u, x), u), P(x))\}
+\end{split}
+\end{equation}
+$
+
+## Justifying Skolemization
+
+Note that Skolemization of a formula `does not produce a logically equivalent formula`.
+
+For example, $\forall x \exists y P(x, y)$ turns into $\forall x P(x, f(x))$
+
+If we interpret these in the domain $\Z$ of integers, interpreting $f$ as the "successor" function $(+1)$, and $P$ as $>$, then the original formula is satisfied, but the second is not.
+
+However, Skolemization does not produce an `equisatisfiable` formula - one that is satisfiable iff the original was - and this is all we care about for the purposes of resolution proofs.
+
+## A First Look at Resolution for Predicate Logic
+
+We wish to develop the resolution principle for predicate logic with function symbols.
+
+However, now we will not be resolving on simple literals, but on atomic formulas containing variables, constants, and symbols.
+
+Simple cases seem easy enough, for example, from
+
+$
+\begin{equation}
+\neg L(x) \vee G(x) \text{   and   } \neg G(c)
+\end{equation}
+$
+
+we would like to conclude $\neg L(c)$. ("Every lorikeet is gorgeous" and "Coco is not gorgeous" entails "Coco is not a lorikeet")
+
+## Resolution for Predicate Logic
+
+Note that all variables in
+
+$
+\begin{equation}
+\neg L(x) \vee G(x) \text{   and   } \neg G(c)
+\end{equation}
+$
+
+are universally quantified
+
+In particular, we could `instantiate` $\neg L(x) \vee G(x)$ to $\neg L(c) \vee G(c)$; then we will be resolving the two clauses on $G(c)$ and its negation, just as happened in the propositional case.
+
+The resolvent then comes out as $\neg L (c)$, as we hoped.
+
+Next we will develop this idea and define resolution deduction for arbitrary sets of clauses.
