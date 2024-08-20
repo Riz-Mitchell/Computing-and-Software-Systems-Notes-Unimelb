@@ -23,7 +23,7 @@ CNF:
 
 $(P \vee \neg Q \vee S) \wedge (P \vee \neg R \vee S) \wedge (\neg S \vee \neg P) \wedge (\neg S \vee Q \vee R)$
 
-__`Clausal form:`__ $\{\{P, S, \neg Q\}, \{P S \neg R\}, \{\neg P \neg S\}, \{Q, R, \neg S\}\}, $
+__`Clausal form:`__ $\{\{P, S, \neg Q\}, \{P, S, \neg R\}, \{\neg P \neg S\}, \{Q, R, \neg S\}\}, $
 
 We often treat these __`interchangeably`__
 

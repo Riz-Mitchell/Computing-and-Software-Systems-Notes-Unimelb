@@ -153,6 +153,12 @@ $
 \end{align}
 $
 
+> If $G$ doesn't depend on $x$ you can pull it out
+
+> $x$ is free in $G$ if $G(x)$
+
+> That is to say $G$ doesn't depend on $x$
+
 No matter what $F$ is. In particular $F$ may have free occurrences of $x$
 
 ## Models and Validity of Formulas
