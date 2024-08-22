@@ -14,8 +14,15 @@ Shoot bullet and draw a ray in the direction of movement and calculate the objec
 
 > This doesn't always go to plan as an object could move through the path in the mean time
 
-# Discrete (a posteriori)
+#### Discrete (a posteriori)
 
 Shoot bullet and every frame check for a collision
 
 > Object could move through objects in between the frames and it will not know it was supposed to collide
+
+Importantly, discrete approaches let objects collide and then quickly rectifi the problem so that you don't see
+
+## Bounding Volumes
+
+Simplified geometry that encloses the whole object.
+Ideally you don't want it as simple as possible and as small
