@@ -1,0 +1,153 @@
+\documentclass[a4paper]{article}
+    \usepackage{fullpage}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{textcomp}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \textheight=10in
+    \pagestyle{empty}
+    \raggedright
+    \usepackage[left=0.8in,right=0.8in,bottom=0.8in,top=0.8in]{geometry}
+
+    %\renewcommand{\encodingdefault}{cg}
+%\renewcommand{\rmdefault}{lgrcmr}
+
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
+
+% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\area} [2] {
+    \vspace*{-9pt}
+    \begin{verse}
+        \textbf{#1}   #2
+    \end{verse}
+}
+
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
+
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\newcommand{\employer} [3] {
+    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
+}
+
+\newcommand{\contact} [3] {
+    \vspace*{-10pt}
+    \begin{center}
+        {\Huge \scshape {#1}}\\
+        #2 \\ #3
+    \end{center}
+    \vspace*{-8pt}
+}
+
+\newenvironment{achievements}{
+    \begin{list}
+        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
+    \end{list}
+}
+
+\newcommand{\schoolwithcourses} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+    \vspace*{5pt}
+}
+
+\newcommand{\school} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+}
+% END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+
+    \begin{document}
+\vspace*{-40pt}
+
+    
+
+%==== Profile ====%
+\vspace*{-10pt}
+\begin{center}
+	{\Huge \scshape {Riley Mitchell}}\\
+	Melbourne $\cdot$ rileymitch117@gmail.com $\cdot$ 0432553682 $\cdot$ https://github.com/Riz-Mitchell\\
+\end{center}
+
+%==== About Me ====%
+\header{About Me}
+A passionate computer science student with a particular interest in web development. I am eager to work along side and learn from the industries best while I complete my 3rd and final year in my undergraduate degree. I also have a huge drive for competitive swimming which I train for 8 times a week. Recently competing in the 2024 Australian Olympic Trials, I hope to one day qualify for an Australian National Team while I complete my degree and gain more invaluable experience that I can use to further a career as a full stack developer.
+\vspace{2mm}
+
+%==== Education ====%
+\header{Education}
+\textbf{University of Melbourne}\hfill Melbourne, VIC\\
+Bachelor of Science, Computing and Software Systems \hfill Feb 2022 - July 2025\\
+\vspace{2mm}
+
+%==== Experience ====%
+\header{Work Experiecne}
+\vspace{1mm}
+
+\textbf{Arena Swimming Melbourne} \hfill Melbourne VIC\\
+\textit{Store Manager} \hfill July 2024 - Present\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Manage stock.
+	\item Assist in administrative tasks.
+	\item Oversee sale of world renowned competitive swim suits.
+\end{itemize}
+\textbf{Kooyong Tennis Club} \hfill Melbourne VIC\\
+\textit{Wait Staff} \hfill January 2023 - August 2023\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Interacting with and elating a wide variety of clients and members.
+	\item Perform waiter duties in a high stress environment while maintaining strict detail.
+	\item Work effectively in a team in a fast paced changing environment.
+\end{itemize}
+\textbf{Portsea SLSC \textquotesingle{}The Cub\textquotesingle{} Restaurant} \hfill Mornington Peninsula, VIC\\
+\textit{Bartender / Wait Staff} \hfill December 2018 - December 2023\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Mixed complex drinks under extremely busy conditions.
+	\item Kept track of stock and needs of patrons.
+	\item Worked effectively in a team to allow each other to do their respective jobs to the best of their abilities.
+\end{itemize}
+
+\header{Skills}
+\begin{tabular}{ l l }
+	Programming Languages:    & Javascript, Java, Python, C, SQL, HTML, CSS \\
+	Technologies:             & Express, Mongoose, MongoDB, SQL, Pandas, Github, Postman, Thunderclient                                      
+                \\
+	Swimming:                 & Butterfly, Freestyle                                 \\
+	General:                  & Teamwork, Coordination, Resilience, Hard Working     \\
+\end{tabular}
+\vspace{2mm}
+
+\header{Projects}
+{\textbf{Library Management System (ongoing)}} {\sl Node JS, Express, Mongoose, MongoDB, AWS} 
+\\
+Creating a RESTful API that incorporates JWT authentication for a Library Management System designed to handle inventory, deal with member registrations, manage book loans and host administrative actions.\\
+\vspace*{2mm}
+{\textbf{Autocomplete Radix Tree}} {\sl C, MAKEFILE}
+\\
+Developed an Autocomplete Radix Tree in C, implementing a highly efficient data structure with lookup, insertion and deletion operations operations designed to elevate search functionality, providing a way to store strings in a space-time-efficient manner while supporting autocomplete suggestions.\\
+\vspace*{2mm}
+{\textbf{Parsons Problems Webapp}} {\sl Node JS, Express, Mongoose, MongoDB, AWS} \hfill 
+\\
+Spearheaded backend development on a Parsons Problems web app, personally implementing a RESTful API that utilizes role based JWT auth to control route access and CRUD operations on user data.\\
+\vspace*{2mm}
+
+\header{Awards}
+\textbf{Australian Swimming Trials Competitor} \hfill Swimming Australia\\
+Competed in the 2024 Australian Olympic Swimming trials \hfill July 2024\\
+\vspace*{2mm}
+\textbf{Australian Open National SC Finalist} \hfill Swimming Australia\\
+Placed 6th in the 2023 Australia Open National Short Course for 200 Butterfly A Final \hfill Sep 2023\\
+\vspace*{2mm}
+
+\ 
+\end{document}

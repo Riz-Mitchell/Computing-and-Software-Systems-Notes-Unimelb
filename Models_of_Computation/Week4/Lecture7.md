@@ -11,7 +11,8 @@ Common redundancies:
 
 $(P \vee P) \wedge (P \vee \neg P \vee Q) \wedge (P \vee \neg Q \vee R) \wedge (P \vee R)$
 
-> Note that CNF is __`not unique`__
+> [!NOTE]
+> CNF is __`not unique`__
 
 ## Clausal Form
 
@@ -110,11 +111,13 @@ Five new kinds of symbols:
 1. constants (e.g. for "`the` cart", d for "`the` donkey")
 
 2. predicates (e.g. $P$ for "\_\_\_ is pushing \_\_\_", $H$ for "\_\_\_ is happy")
+> [!NOTE] 
 > Identity, =, is a special case.
 
 3. quantifiers
+> [!IMPORTANT]
 > $\forall$ pronounced "for all"
-
+> 
 > $\exists$ pronounced "there exists"
 
 4. variables (e.g. $x$, $y$, $z$)
