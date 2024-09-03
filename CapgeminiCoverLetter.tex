@@ -1,0 +1,73 @@
+%% Inicio del archivo `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% Este trabajo puede ser distribuido o modificado bajo las 
+% condiciones de la LaTeX Project Public License V1.3c, 
+% disponible en http://www.latex-project.org/lppl/.
+%
+% Traducción al Español por Fausto M. Lagos (piratax007@protonmail.ch), 2016.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % posibles opciones de tamaño de fuente ('10pt', '11pt' and '12pt'), papel ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') y familia de fuentes ('sans' and 'roman')
+
+% temas moderncv
+\moderncvstyle{casual}                             % Los estilos disponibles son 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % las opciones de color son 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % descomentar al inicio de la línea para definir la fuente por defecto; use '\sfdefault' para sans serif por defecto, '\rmdefault' para roman, o cualquier otro nombre de fuente instalada en sus sistema
+%\nopagenumbers{}                                  % descomente para eliminar el numerado automático de las páginas en cartas de más de una página
+
+% Codificación de carácteres
+\usepackage[utf8]{inputenc}                        % Si no esta usando xelatex o lualatex, remplace por la codificación que este usando
+%\usepackage{CJKutf8}                              % descomente si necesita usar CJK para escribir su carta en Chino, Japones or Koreano
+\usepackage[spanish, english]{babel}			   % comentar si su carta esta escrita en un idioma diferente del Español
+
+% Configuración de márgenes
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % descomente si quiere modificar el ancho de columna para la fecha
+%\setlength{\makecvtitlenamewidth}{10cm}           % para el estilo 'classic', si quiere forzar el ancho del nombre. la longitud es normalmente calculada para evitar sobrelapamientos con su información personal; descomente esta línea bajo su propio riesgo
+
+% Información personal
+\name{Riley}{Mitchell}
+\title{Capgemini Internship Position}                               % opcional, remover o comentar si no quiere que aparezca su título personal
+\address{1A Kinkora Rd}{3122}{Melbourne}% opcional, remover o comentar si no quiere que aparezca sus datos de ubicación; el código postal y país son argumentos que puede omitirse o pasarse vacíos
+\phone[mobile]{0432553682}		                   % opcional, remover o comentar si no quiere incluir su número de móvil
+\email{rileymitch117@gmail.com}                               % opcional, remover o comentar si no quiere incluir su dirección de email
+
+% para mostrar etiquetas numéricas en la bibliografía (por defecto no se muestran etiquecas); descomente las siguientes líneas solo si usa referencias bibliográficas en su carta
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]} % Considere reemplazar la línea 44 con esta
+
+% bibliografía con múltiples entradas
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            contenido
+%----------------------------------------------------------------------------------
+\begin{document}
+%-----       carta       ---------------------------------------------------------
+% Datos del destinatario
+\recipient{Human Resources, Capgemini}{Melbourne}
+\date{3rd September 2024}
+\opening{Dear Director of Human Resources,}
+\closing{Sincerely,}
+
+\makelettertitle
+
+I am writing to express my enthusiasm for the 2024/2025 Capgemini Summer Internship. Currently in my final year of a Bachelor of Science degree majoring in Computing and Software Systems at the University of Melbourne, I am eager to apply my academic knowledge and passion for technology to real-world challenges. This internship presents an incredible opportunity to learn from Capgemini's experts and gain practical experience in consulting and digital transformation.
+
+
+My academic journey has equipped me with a solid foundation in software development, DevOps, and communication, which I believe aligns with this internship program. My recent projects include developing a RESTful API for a Library Management System and a Parsons Problems web app. In these I implemented role based JWT authentication to manage user access to CRUD database operations. Additionally I recently created an Autocomplete Radix Tree in C, to optimize search query speed. These experiences have honed my technical skills and greatly improved my understanding of the impact of well-crafted software solutions on business processes.<br>
+
+
+Beyond my technical capabilities, I bring strong communication skills and a proven ability to work effectively in team environments. My work as a Store Manager at Arena Swimming Melbourne has strengthened my customer service ethic and my ability to manage tasks in a fast-paced setting. My commitment to competitive swimming, where I recently competed in the 2024 Australian Olympic Trials, demonstrates my dedication, resilience, and goal-oriented mindset—qualities I believe are essential for a successful Capgemini candidate.
+
+
+I am particularly drawn to Capgemini's commitment to innovation and its focus on people as the drivers of technological value. The opportunity to contribute to projects with broad social impacts while expanding my professional network and technical skills within a globally respected organization greatly excites and motivates me. I am confident that the mentoring and career coaching provided during this internship will significantly contribute to my professional development and help me achieve my career goals as a full stack developer.
+
+
+Thank you for considering my application. I look forward to the possibility of contributing to your team and learning from the talented professionals at Capgemini. I am available for an interview at your earliest convenience and can be reached at 0432 553 682 or via email at rileymitch117@gmail.com.
+\makeletterclosing
+
+\end{document}
